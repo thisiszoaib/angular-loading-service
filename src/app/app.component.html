@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  Simple Loading Service with RxJS and HttpInterceptor
+</mat-toolbar>
+
+<div class="content">
+  <button mat-raised-button (click)="loader.show()">
+    Show loader
+  </button>
+
+  <button mat-raised-button (click)="loader.hide()">
+    Hide loader
+  </button>
+  <br>
+
+  <button mat-raised-button (click)="fetchData()">
+    Fetch Data
+  </button>
+
+</div>
+
+<mat-progress-spinner *ngIf="loading$ | async" [mode]="'indeterminate'"></mat-progress-spinner>
