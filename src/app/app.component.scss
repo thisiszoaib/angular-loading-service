@@ -3,7 +3,17 @@ mat-progress-spinner {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.spinner-background {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
     z-index: 2;
+    backdrop-filter: blur(2px);
 }
 
 .content {

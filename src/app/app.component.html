@@ -16,6 +16,14 @@
     Fetch Data
   </button>
 
+  <button mat-raised-button (click)="fetchMultipleData()">
+    Fetch Multiple Data
+  </button>
+
 </div>
 
-<mat-progress-spinner *ngIf="loading$ | async" [mode]="'indeterminate'"></mat-progress-spinner>
+<ng-container *ngIf="loading$ | async">
+  <div class="spinner-background">
+  </div>
+  <mat-progress-spinner [mode]="'indeterminate'"></mat-progress-spinner>
+</ng-container>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { concatMap } from 'rxjs/operators';
 import { LoadingService } from './loading.service';
 
 @Component({
@@ -18,5 +19,21 @@ export class AppComponent {
       .subscribe((res) => {
         console.log(res);
       });
+  }
+
+  fetchMultipleData() {
+    this.http
+      .get('https://api.github.com/users/thisiszoaib')
+      .subscribe((res) => {
+        console.log(res);
+      });
+
+      this.http.get('https://api.github.com/users/thisiszoaib').pipe(
+        concatMap(() => this.http.get('https://api.github.com/users'))
+      )
+      .subscribe((res) => {
+        console.log(res);
+      });
+    
   }
 }
