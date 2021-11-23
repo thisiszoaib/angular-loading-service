@@ -3,27 +3,19 @@
 </mat-toolbar>
 
 <div class="content">
-  <button mat-raised-button (click)="loader.show()">
-    Show loader
-  </button>
+  <button mat-raised-button (click)="loader.show()">Show loader</button>
 
-  <button mat-raised-button (click)="loader.hide()">
-    Hide loader
-  </button>
-  <br>
+  <button mat-raised-button (click)="loader.hide()">Hide loader</button>
+  <br />
 
-  <button mat-raised-button (click)="fetchData()">
-    Fetch Data
-  </button>
+  <button mat-raised-button (click)="fetchData()">Fetch Data</button>
 
   <button mat-raised-button (click)="fetchMultipleData()">
     Fetch Multiple Data
   </button>
-
 </div>
 
 <ng-container *ngIf="loading$ | async">
-  <div class="spinner-background">
-  </div>
+  <div class="overlay"></div>
   <mat-progress-spinner [mode]="'indeterminate'"></mat-progress-spinner>
 </ng-container>
